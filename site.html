@@ -6,14 +6,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Currency Converter</title>
     <style>
-        footer {
+     footer {
     background: #212020;
-    padding: 20px;
+    padding: 25px 15px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    justify-content: start;
-    margin-top: 400px;
-  }
+    margin-top: 40px;
+    width: 100%;
+}
   .pfooter {
     color: white;
     font-family: "Arial", sans-serif;
@@ -79,6 +81,25 @@ margin: 40px auto;
   color: white;
   box-shadow: 0 0 20px rgba(195, 196, 196, 0.3);
   }
+  @media (max-width: 500px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .apps-header {
+                margin-top: 10px;
+            }
+
+            header h2 {
+                font-size: 18px;
+            }
+
+            #conversor {
+                width: 90%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -127,14 +148,14 @@ margin: 40px auto;
         // Function to convert reais to dollars and display on the user's screen without being a pop-up.
     
 
-        function converterDolar() {
+        function convertDolar() {
         const valorDolar = document.querySelector("#dolar").value;
         //Retrieve the value from the input with the id "dollar".
         const valorReal = Number(valorDolar) * 5.38;
         // Convert the dollar value to reais (considering an exchange rate of 5.38).
 
     document.querySelector("#resultado").textContent =
-                `O valor em reais é ${valorReal.toFixed(2)} BRL`;
+                `The value in real is ${valorReal.toFixed(2)} BRL`;
         }
         // Function to convert dollars to reais and display on the user's screen without being a pop-up.
     
