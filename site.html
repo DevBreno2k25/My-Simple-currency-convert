@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Currency Converter</title>
+    <style>
+        footer {
+    background: #212020;
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    margin-top: 400px;
+  }
+  .pfooter {
+    color: white;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    padding: 15px 10px;
+    margin: 0;
+  }
+   header {
+    background-color: #212020;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+  }
+  h2 {
+    color: white;
+    font-family: poppins, sans-serif;
+  }
+
+   .apps-header a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px 10px;
+    margin-top: 10px;
+
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Cores oficiais */
+  .apps-header a.github {
+    background: #333;
+  }
+
+  .apps-header a.instagram {
+    background: #e1306c;
+  }
+
+  .apps-header a.whatsapp {
+    background: #25d366;
+  }
+
+  .apps-header a:hover {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+  #conversor {
+    text-align: center;
+    margin-top: 100px;
+      width: 280px;
+  height: 500px;
+margin: 40px auto;
+  padding: 20px;
+  border-left: 4px solid #eaeded;
+  border-right: 4px solid #e5eaeb;
+  border-radius: 20px;
+  background: #545353;
+  color: white;
+  box-shadow: 0 0 20px rgba(195, 196, 196, 0.3);
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>My currency converter</h2>
+        <div class="apps-header">
+            <a href="https://github.com/DevBreno2k25" target="_blank" class="github"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/nk.santoszl" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5511982944152" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </header>
+    <section id="conversor">
+        <h1>Dollar Converter</h1>
+    
+    <input id="real" placeholder="Valor em reais" type="number">
+    <button onclick="convert()">Convert</button>
+    <!-- This input will be used for the function to convert Reais to Dollars. -->
+    
+    <h1>Real Converter</h1>
+    
+    <input id="dolar" placeholder="Valor em Dólar" type="number">
+    <button onclick="convertDolar()">Convert</button>
+    <!-- This input will be used for the function to convert dollars to reais. -->
+    
+    <div id="resultado" style="margin-top: 10px; font-weight: bold; font-family:'Courier New', Courier, monospace; color:#f4f2f2;"></div>
+    <!-- to style how the result appears on the screen -->
+</section>
+    
+    <footer>
+    <p class="pfooter">© 2025 Breno Santos. All rights reserved.</p>
+    </div>
+    </footer>
+    
+</body>
+
+ <script>
+        function convert() {
+        const valorReal = document.querySelector("#real").value; 
+        // Retrieve the value from the input with the id "real".
+        const valorEmDolar = Number(valorReal) / 5.38;
+        // Convert the value from reais to dollars (considering an exchange rate of 5.38).
+
+       document.querySelector("#resultado").textContent =
+                `The value in dollars is ${valorEmDolar.toFixed(2)} USD`;
+        }
+        // Function to convert reais to dollars and display on the user's screen without being a pop-up.
+    
+
+        function converterDolar() {
+        const valorDolar = document.querySelector("#dolar").value;
+        //Retrieve the value from the input with the id "dollar".
+        const valorReal = Number(valorDolar) * 5.38;
+        // Convert the dollar value to reais (considering an exchange rate of 5.38).
+
+    document.querySelector("#resultado").textContent =
+                `O valor em reais é ${valorReal.toFixed(2)} BRL`;
+        }
+        // Function to convert dollars to reais and display on the user's screen without being a pop-up.
+    
+
+</script>
+</html>
